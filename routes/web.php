@@ -3,6 +3,7 @@
 use App\Http\Controllers\User;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Question;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\NoteDataTable;
 
@@ -41,6 +42,14 @@ Route::group(['middleware' => 'revalidate'], function () {
     Route::get('/edit-pengguna/{id}', [User::class, 'update'])->name('edit-pengguna');
     Route::post('/edit-pengguna/{id}', [User::class, 'update']);
     Route::get('/hapus-pengguna/{id}', [User::class, 'delete']);
+
+    Route::get('/bank-soal', [Question::class, 'index'])->name('bank-soal');
+    Route::get('/detail-bank-soal/{id}', [Question::class, 'detail'])->name('detail-bank-soal');
+    Route::get('/tambah-bank-soal', [Question::class, 'new'])->name('tambah-bank-soal');
+    Route::post('/tambah-bank-soal', [Question::class, 'new']);
+    Route::get('/edit-bank-soal/{id}', [Question::class, 'update'])->name('edit-bank-soal');
+    Route::post('/edit-bank-soal/{id}', [Question::class, 'update']);
+    Route::get('/hapus-bank-soal/{id}', [Question::class, 'delete']);
     
     Route::group(['middleware' => 'hrd'], function () {
         
