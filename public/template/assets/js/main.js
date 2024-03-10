@@ -125,6 +125,12 @@
     });
   }
 
+  if (select('.quill-editor-default-1')) {
+    new Quill('.quill-editor-default-1', {
+      theme: 'snow'
+    });
+  }
+
   if (select('.quill-editor-bubble')) {
     new Quill('.quill-editor-bubble', {
       theme: 'bubble'

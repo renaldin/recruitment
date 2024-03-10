@@ -23,6 +23,12 @@
                 <span>Bank Soal</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link @if($title != 'Data Lowongan Pekerjaan') collapsed @endif" href="/lowongan-pekerjaan">
+                <i class="bi bi-person"></i>
+                <span>Lowongan</span>
+            </a>
+        </li>
 
         @elseif(Session()->get('role') == 'Pelamar')
 
