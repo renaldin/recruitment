@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\JobVacancy;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Question;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,14 @@ Route::group(['middleware' => 'revalidate'], function () {
     Route::get('/edit-bank-soal/{id}', [Question::class, 'update'])->name('edit-bank-soal');
     Route::post('/edit-bank-soal/{id}', [Question::class, 'update']);
     Route::get('/hapus-bank-soal/{id}', [Question::class, 'delete']);
+
+    Route::get('/lowongan-pekerjaan', [JobVacancy::class, 'index'])->name('lowongan-pekerjaan');
+    Route::get('/detail-lowongan-pekerjaan/{id}', [JobVacancy::class, 'detail'])->name('detail-lowongan-pekerjaan');
+    Route::get('/tambah-lowongan-pekerjaan', [JobVacancy::class, 'new'])->name('tambah-lowongan-pekerjaan');
+    Route::post('/tambah-lowongan-pekerjaan', [JobVacancy::class, 'new']);
+    Route::get('/edit-lowongan-pekerjaan/{id}', [JobVacancy::class, 'update'])->name('edit-lowongan-pekerjaan');
+    Route::post('/edit-lowongan-pekerjaan/{id}', [JobVacancy::class, 'update']);
+    Route::get('/hapus-lowongan-pekerjaan/{id}', [JobVacancy::class, 'delete']);
     
     Route::group(['middleware' => 'hrd'], function () {
         

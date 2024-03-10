@@ -24,8 +24,7 @@ class Question extends Controller
         $data = [
             'title'             => 'Data Bank Soal',
             'subTitle'          => 'Daftar',
-            'daftarBankSoal'    => Questions::orderBy('created_at', 'DESC')->limit(300)->get(),
-            'daftarUser'        => Users::orderBy('created_at', 'DESC')->limit(300)->get(),
+            'daftarBankSoal'    => Questions::with('createdBy')->where('deleted_at', null)->orderBy('created_at', 'DESC')->limit(300)->get(),
             'user'              => Users::find(Session()->get('id')),
         ];
 
