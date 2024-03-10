@@ -74,7 +74,7 @@
                     <label class="form-label"></label>
                     <img src="{{ $form == 'Edit' || $form == 'Detail' && $detail->photo ? asset('photo/'.$detail->photo) : asset('photo/default.jpg') }}" alt="Profile" class="rounded-circle" id="load_image" style="width: 160px; height: 160px;">
                 </div>
-                @include('components.buttonForm')
+                @include('components.buttonForm', ['back' => '/pengguna'])
                 </form>
             </div>
             </div>

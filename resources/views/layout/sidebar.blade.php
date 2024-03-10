@@ -17,6 +17,12 @@
                 <span>Pengguna</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link @if($title != 'Data Bank Soal') collapsed @endif" href="/bank-soal">
+                <i class="bi bi-person"></i>
+                <span>Bank Soal</span>
+            </a>
+        </li>
 
         @elseif(Session()->get('role') == 'Pelamar')
 
